@@ -1,7 +1,10 @@
 import React from 'react';
-import { logout } from '../actions/currentUser';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import Table from './Table.js';
+
+import { logout } from '../actions/currentUser';
 
 const Home = props => {
 
@@ -13,6 +16,7 @@ const Home = props => {
   return (
     <div>
       <h1>Welcome to your Home Page, {props.currentUser.username}!</h1>
+      <Table />
       {/*
       <form onSubmit={handleOnSubmit}>
         <input type="submit" value="Log Out" />
