@@ -18,7 +18,16 @@ const Table = () => {
      {
        Header: "% of Total Cost",
        accessor: "percentOfTotal",
-        accessor: row => [data[0].price, data[1].price, data[2].price].reduce((sum, current) => sum + current, 0)
+        // accessor: row => [data[0].price, data[1].price, data[2].price].reduce((sum, current) => sum + current, 0)
+        accessor: row => {
+          const totalCost = data.map(cell => cell.price).reduce((sum, current) => sum + current)
+          // console.log(totalCost)
+          // for (let i = 0; i < data.length; i++) {
+          //   console.log(data[i].product)
+          // }
+          return ((row.price / totalCost) * 100).toFixed(2)
+          // return data.map(cell => cell.price / totalCost)
+        }
      },
    ],
    []
