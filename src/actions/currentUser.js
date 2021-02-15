@@ -33,7 +33,7 @@ export const signUp = credentials => {
           throw new Error(json.error)
         } else {
           console.log(json)
-          dispatch(setCurrentUser(json))
+          dispatch(setCurrentUser(json.data))
         }
       })
       .catch(json => console.log(json))
@@ -57,7 +57,7 @@ export const login = credentials => {
           throw new Error(json.error)
         } else {
           console.log(json)
-          dispatch(setCurrentUser(json))
+          dispatch(setCurrentUser(json.data))
         }
       })
       .catch(json => console.log(json))
@@ -79,7 +79,7 @@ export const getCurrentUser = () => {
           throw new Error(json.error)
         } else {
           console.log(json)
-          dispatch(setCurrentUser(json))
+          dispatch(setCurrentUser(json.data))
         }
       })
       .catch(json => console.log(json))
