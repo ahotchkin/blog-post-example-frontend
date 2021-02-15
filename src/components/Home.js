@@ -15,7 +15,7 @@ const Home = props => {
 
   return (
     <div>
-      <h1>Welcome to your Home Page, {props.currentUser.username}!</h1>
+      <h1>Welcome to your Home Page, {props.currentUser.attributes.username}!</h1>
       <Table />
       {/*
       <form onSubmit={handleOnSubmit}>
